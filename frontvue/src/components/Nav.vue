@@ -1,31 +1,16 @@
 <template>
-  <v-flex lg3 md3 xs2>
-    <v-navigation-drawer permanent>
-      <v-toolbar flat>
-        <v-list>
-          <v-list-tile>
-            <v-list-tile-title class="title"
-              >Wild Code League</v-list-tile-title
-            >
-          </v-list-tile>
-        </v-list>
-      </v-toolbar>
+  <b-navbar toggleable="lg" variant="info">
+    <b-navbar-brand to="/">Wild Code League</b-navbar-brand>
 
-      <v-divider></v-divider>
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <v-list dense class="pt-0">
-        <v-list-tile v-for="item in items" :key="item.title">
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-  </v-flex>
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav>
+        <b-nav-item to="/">Link</b-nav-item>
+        <b-nav-item to="about">Disabled</b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
 </template>
 <script>
 export default {

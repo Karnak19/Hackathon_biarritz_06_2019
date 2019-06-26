@@ -1,12 +1,7 @@
 <template>
-  <div>
-    <v-container fluid>
-      <v-layout row wrap>
-        <app-nav />
-        <slot />
-      </v-layout>
-    </v-container>
-  </div>
+  <b-row>
+    <slot />
+  </b-row>
 </template>
 
 <script>
