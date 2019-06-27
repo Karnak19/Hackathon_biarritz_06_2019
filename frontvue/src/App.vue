@@ -1,31 +1,33 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <vue-frag>
+    <app-nav />
+    <b-container fluid>
+      <router-view />
+    </b-container>
+  </vue-frag>
 </template>
 
+<script>
+import Nav from "@/components/Nav";
+import { Fragment } from "vue-fragment";
+
+export default {
+  name: "Nav",
+  components: {
+    "app-nav": Nav,
+    "vue-frag": Fragment
+  }
+};
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container-fluid {
+  /* padding-left: 0px !important;
+  padding-right: 0px !important; */
   text-align: center;
-  color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  background-image: url("./assets/bg.jpg");
+  background-attachment: fixed;
 }
 </style>
