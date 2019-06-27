@@ -6,11 +6,14 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item to="/campus">Campus</b-nav-item>
-        <b-nav-item to="/history">Matches history</b-nav-item>
+        <b-nav-item v-for="(item, i) in itemsLeft" :key="i" :to="item.path">{{
+          item.title
+        }}</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item to="/about">About</b-nav-item>
+        <b-nav-item v-for="(item, i) in itemsRight" :key="i" :to="item.path">{{
+          item.title
+        }}</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -20,16 +23,24 @@ export default {
   name: "Nav",
   data() {
     return {
-      items: [
+      itemsLeft: [
         {
           title: "Home",
-          icon: "dashboard"
+          path: "/"
         },
         {
-          title: "Campus"
+          title: "Campus",
+          path: "/campus"
         },
         {
-          title: "History"
+          title: "History",
+          path: "/history"
+        }
+      ],
+      itemsRight: [
+        {
+          title: "About",
+          path: "/about"
         }
       ]
     };

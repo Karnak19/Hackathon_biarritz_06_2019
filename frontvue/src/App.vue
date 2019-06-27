@@ -22,8 +22,12 @@ export default {
 
 <style>
 .container-fluid {
-  padding-left: 0px;
-  padding-right: 0px;
+  /* padding-left: 0px !important;
+  padding-right: 0px !important; */
   text-align: center;
+}
+body {
+  background-image: url("./assets/bg.jpg");
+  background-attachment: fixed;
 }
 </style>
