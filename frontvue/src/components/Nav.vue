@@ -6,14 +6,14 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item v-for="(item, i) in itemsLeft" :key="i" :to="item.path">{{
-          item.title
-        }}</b-nav-item>
+        <b-nav-item v-for="(item, i) in itemsLeft" :key="i" :to="item.path">
+          {{ item.title }}
+        </b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item v-for="(item, i) in itemsRight" :key="i" :to="item.path">{{
-          item.title
-        }}</b-nav-item>
+        <b-nav-item v-for="(item, i) in itemsRight" :key="i" :to="item.path">
+          {{ item.title }}
+        </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -50,6 +50,6 @@ export default {
 
 <style>
 a.router-link-exact-active {
-  color: rgb(21, 47, 197) !important;
+  color: #f36c6c !important;
 }
 </style>
