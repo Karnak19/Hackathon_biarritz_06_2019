@@ -1,13 +1,13 @@
 <template>
   <app-layout>
     <template v-slot:main>
-      <b-col lg="12">
+      <b-col lg="8">
         <HelloWorld msg="Welcome to Your Vue.js App" />
       </b-col>
-    </template>
-    <template v-slot:feed>
+
       <app-feed />
     </template>
+    <template v-slot:feed></template>
   </app-layout>
 </template>
 
