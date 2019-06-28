@@ -1,16 +1,15 @@
 <template>
-  <b-col lg="3" class="news">
+  <b-col lg="3" cols="6" offset-cols="3" class="news">
     <span>News Feed</span>
     <ul>
       <li v-for="(match, i) in matches" :key="i" class="my-3">
-        <b-toast :id="i" variant="warning" static visible no-auto-hide>
+        <b-toast :id="i" static visible no-auto-hide>
           <div
             slot="toast-title"
             class="d-flex flex-grow-1 align-items-baseline"
           >
             <b-img
-              blank
-              blank-color="#ff5555"
+              src="https://wildcodeschool.fr/wp-content/uploads/2019/01/cropped-favicon_blanc-32x32.png"
               class="mr-2"
               width="12"
               height="12"
@@ -123,6 +122,7 @@ export default {
   float: left;
   padding-left: 10px;
   padding-top: 50px;
+  width: 100%;
   animation: ticker 25s cubic-bezier(1, 0, 0.5, 0) infinite;
   -webkit-user-select: none;
 }

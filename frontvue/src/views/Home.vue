@@ -1,8 +1,8 @@
 <template>
   <app-layout>
     <template v-slot:main>
-      <b-col lg="8">
-        <HelloWorld msg="Welcome to Your Vue.js App" />
+      <b-col lg="8" class="mt-5">
+        <img src="@/assets/meme.jpg" alt="Responsive image" />
       </b-col>
 
       <app-feed />

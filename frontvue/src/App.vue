@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+
 .container-fluid {
   /* padding-left: 0px !important;
   padding-right: 0px !important; */
@@ -29,5 +31,6 @@ export default {
 body {
   background-image: url("./assets/bg.jpg");
   background-attachment: fixed;
+  font-family: "Ubuntu", sans-serif;
 }
 </style>
