@@ -2,10 +2,8 @@
   <b-col lg="3" class="news">
     <span>News Feed</span>
     <ul>
-      <li v-for="(match, i) in matches" :key="i">
-        <b-button @click="$bvToast.show(i)">Show toast</b-button>
-
-        <b-toast :id="i" variant="warning" solid>
+      <li v-for="(match, i) in matches" :key="i" class="my-3">
+        <b-toast :id="i" variant="warning" static visible no-auto-hide>
           <div
             slot="toast-title"
             class="d-flex flex-grow-1 align-items-baseline"
@@ -17,16 +15,13 @@
               width="12"
               height="12"
             ></b-img>
-            <strong class="mr-auto">Notice!</strong>
-            <small class="text-muted mr-2">42 seconds ago</small>
+            <strong class="mr-auto">Match !</strong>
+            <small class="text-muted mr-2">{{ match.isoDate }}</small>
           </div>
-          {{ match.isoDate }} : {{ match.homeTeam.toUpperCase() }} vs
+          {{ match.homeTeam.toUpperCase() }} vs
           {{ match.awayTeam.toUpperCase() }} ->
           {{ match.winnerUid.toUpperCase() }} won
         </b-toast>
-        <!-- <a href="#">
-            
-        </a>-->
       </li>
     </ul>
   </b-col>
@@ -39,7 +34,8 @@ export default {
   name: "NewsFeed",
   data() {
     return {
-      matches: []
+      matches: [],
+      wilders: []
     };
   },
   created() {
@@ -109,6 +105,7 @@ export default {
 }
 
 .news span {
+  z-index: 5;
   float: left;
   color: #fff;
   width: 100%;

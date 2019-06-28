@@ -2,12 +2,12 @@
   <app-layout>
     <template v-slot:main>
       <b-col lg="10" offset-lg="1">
-        <b-row>
+        <b-row lg="8">
           <b-col v-for="(campus, i) in campuses" :key="i" lg="3" class="my-2">
-            <b-card :title="campus.campus">
-              <b-card-text>ELO : 1000</b-card-text>
+            <b-card :title="campus.city">
+              <b-card-text>ELO : {{ campus.elo }}</b-card-text>
               <b-link
-                :to="{ name: `Campus`, params: { id: campus.id } }"
+                :to="{ name: `Campus`, params: { id: campus.uid } }"
                 class="card-link"
                 >Another link</b-link
               >
@@ -20,6 +20,7 @@
 </template>
 <script>
 import LayoutVue from "@/Layout.vue";
+import axios from "axios";
 export default {
   name: "Campus page",
   components: {
@@ -27,32 +28,19 @@ export default {
   },
   data() {
     return {
-      campuses: [
-        {
-          id: 1,
-          campus: "Biarritz"
-        },
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        {}
-      ]
+      campuses: []
     };
+  },
+  created() {
+    axios
+      .post("http://localhost:4000/graphql", {
+        query: "{elo {city elo uid}}"
+      })
+      .then(response => {
+        let datas = response.data.data.elo;
+        this.campuses = datas;
+      })
+      .catch(err => console.log(err));
   }
 };
 </script>
